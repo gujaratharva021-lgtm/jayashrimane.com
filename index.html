@@ -28,8 +28,8 @@
     .nav-cta { font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; color: #fff; background: var(--gold); padding: 10px 22px; text-decoration: none; transition: background 0.25s; }
     .nav-cta:hover { background: var(--gold-light); }
     #home { min-height: 100vh; position: relative; display: flex; align-items: center; overflow: hidden; background: #fff; }
-    .hero-bg { position: absolute; right: 0; top: 0; width: 100%; height: 100%; object-fit: contain; object-position: right top; opacity: 0.7; filter: brightness(1.08) saturate(0.9); z-index: 0; }
-    .hero-fade { position: absolute; top: 0; left: 0; width: 62%; height: 100%; background: linear-gradient(to right, #ffffff 55%, rgba(255,255,255,0.9) 78%, transparent 100%); z-index: 1; pointer-events: none; }
+    .hero-bg { position: absolute; right: 0; top: 0; width: 55%; height: 100%; object-fit: cover; object-position: center top; opacity: 0.75; filter: brightness(1.05) saturate(0.9); z-index: 0; }
+    .hero-fade { position: absolute; top: 0; left: 0; width: 65%; height: 100%; background: linear-gradient(to right, #ffffff 55%, rgba(255,255,255,0.85) 78%, transparent 100%); z-index: 1; pointer-events: none; }
     #home::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--gold), transparent); z-index: 3; }
     .hero-text { position: relative; z-index: 2; padding: 140px 60px 80px; max-width: 580px; }
     .hero-eyebrow { font-size: 0.7rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
@@ -95,26 +95,66 @@
     .modal-box ul li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
     .modal-accept { width: 100%; padding: 13px; background: var(--gold); color: #fff; font-family: 'Lato', sans-serif; font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; border: none; cursor: pointer; transition: background 0.25s; }
     .modal-accept:hover { background: var(--gold-light); }
-    @media (max-width: 900px) {
+
+    @media (max-width: 1024px) {
+      nav { padding: 16px 30px; }
+      .hero-text { padding: 130px 30px 70px; max-width: 520px; }
+      #about { gap: 40px; padding: 70px 30px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      #services { padding: 70px 30px; }
+      #contact { padding: 70px 30px; }
+      .contact-grid { gap: 40px; }
+      section { padding: 70px 30px; }
+      .gold-line { margin: 0 30px; }
+      footer { padding: 30px 30px; }
+    }
+
+    @media (max-width: 768px) {
       nav { padding: 14px 20px; }
       .nav-links { display: none; }
-      .hero-bg { width: 100%; opacity: 0.4; }
-      .hero-fade { width: 100%; background: linear-gradient(to bottom, rgba(255,255,255,0.95) 60%, rgba(255,255,255,0.7) 100%); }
-      .hero-text { padding: 100px 24px 60px; max-width: 100%; }
-      #about { grid-template-columns: 1fr; padding: 60px 24px; gap: 36px; }
-      .services-grid { grid-template-columns: 1fr; }
-      #services { padding: 60px 24px; }
-      #contact { padding: 60px 24px; }
-      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-      footer { padding: 28px 20px; flex-direction: column; text-align: center; }
-      section { padding: 60px 24px; }
-      .gold-line { margin: 0 24px; }
+      .nav-logo { font-size: 0.88rem; }
+      .nav-cta { padding: 8px 14px; font-size: 0.68rem; }
+
+      #home { align-items: flex-start; }
+      .hero-bg { width: 100%; height: 100%; object-fit: cover; object-position: center top; opacity: 0.35; }
+      .hero-fade { width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(255,255,255,0.93) 0%, rgba(255,255,255,0.78) 60%, rgba(255,255,255,0.55) 100%); }
+      .hero-text { padding: 110px 20px 60px; max-width: 100%; }
+      .hero-title { font-size: clamp(2.6rem, 11vw, 3.8rem); }
+      .hero-subtitle { font-size: 1.2rem; }
+      .hero-desc { font-size: 0.92rem; max-width: 100%; }
+      .hero-buttons { flex-direction: column; gap: 10px; }
+      .btn-primary, .btn-outline { text-align: center; width: 100%; box-sizing: border-box; }
+
+      .gold-line { margin: 0 20px; }
+      section { padding: 55px 20px; }
+
+      #about { grid-template-columns: 1fr; padding: 55px 20px; gap: 30px; }
+      .about-quote { font-size: 1.15rem; padding: 22px 20px; }
+      .about-stats { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .stat-card { padding: 16px 10px; }
+      .stat-num { font-size: 1.7rem; }
+      .stat-label { font-size: 0.65rem; }
+
+      .services-grid { grid-template-columns: 1fr; gap: 12px; }
+      .service-item { padding: 24px 18px; }
+      #services { padding: 55px 20px; }
+
+      #contact { padding: 55px 20px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+      .contact-detail { gap: 12px; margin-bottom: 18px; }
+      .contact-icon { width: 38px; height: 38px; font-size: 1rem; flex-shrink: 0; }
+      .contact-detail-val { font-size: 0.88rem; }
+      .whatsapp-btn { width: 100%; justify-content: center; }
+
+      footer { padding: 24px 20px; flex-direction: column; text-align: center; gap: 12px; }
+      .footer-links { flex-wrap: wrap; justify-content: center; gap: 14px; }
+
+      .modal-box { padding: 30px 20px; }
     }
   </style>
 </head>
 <body>
 
-<!-- DISCLAIMER MODAL -->
 <div class="modal-overlay" id="disclaimerModal">
   <div class="modal-box">
     <h2>Disclaimer &amp; Confirmation</h2>
@@ -124,13 +164,10 @@
       <li>The user wishes to gain more information about us for their own information and use.</li>
       <li>Any information obtained from this website is completely at the user's own volition.</li>
     </ul>
-    <button class="modal-accept" onclick="document.getElementById('disclaimerModal').style.display='none'">
-      I Accept &amp; Proceed
-    </button>
+    <button class="modal-accept" onclick="document.getElementById('disclaimerModal').style.display='none'">I Accept &amp; Proceed</button>
   </div>
 </div>
 
-<!-- NAVBAR -->
 <nav>
   <a href="#home" class="nav-logo">Adv. Jayashri Mane</a>
   <ul class="nav-links">
@@ -142,7 +179,6 @@
   <a href="https://wa.me/919960002836" class="nav-cta">Book Appointment</a>
 </nav>
 
-<!-- HERO -->
 <section id="home">
   <img class="hero-bg" src="image.png" alt="Lady Justice"/>
   <div class="hero-fade"></div>
@@ -160,7 +196,6 @@
 
 <div class="gold-line"></div>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="about-text">
     <p class="section-label">About</p>
@@ -184,7 +219,6 @@
 
 <div class="gold-line"></div>
 
-<!-- SERVICES -->
 <section id="services">
   <div class="services-header">
     <p class="section-label">Practice Areas</p>
@@ -204,7 +238,6 @@
 
 <div class="gold-line"></div>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="contact-grid">
     <div class="contact-info">
@@ -213,17 +246,17 @@
       <div class="contact-detail">
         <div class="contact-icon">📍</div>
         <div>
-          <div class="contact-detail-label">Office Address</div>
+          <div class="contact-detail-label">Navi Mumbai Office</div>
           <div class="contact-detail-val">Office No. 3074 A, 3rd Floor, V Wing,<br/>Akshar Business Park, Sector No. 25, Vashi,<br/>Near Turbhe Station, Navi Mumbai – 400703,<br/>Maharashtra, India</div>
         </div>
       </div>
       <div class="contact-detail">
-  <div class="contact-icon">📍</div>
-  <div>
-    <div class="contact-detail-label">Mumbai Office (High Court)</div>
-    <div class="contact-detail-val">Office No. 16, 2nd Floor,<br/>Parekh Vora Chambers,<br/>Nagindas Master Road, Fort,<br/>Mumbai – 400001, Maharashtra, India</div>
-  </div>
-</div>
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-detail-label">Mumbai Office (High Court)</div>
+          <div class="contact-detail-val">Office No. 16, 2nd Floor,<br/>Parekh Vora Chambers,<br/>Nagindas Master Road, Fort,<br/>Mumbai – 400001, Maharashtra, India</div>
+        </div>
+      </div>
       <div class="contact-detail">
         <div class="contact-icon">📞</div>
         <div>
@@ -257,7 +290,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-logo">Advocate Jayashri Mane</div>
   <div class="footer-copy">© 2026 Advocate Jayashri Mane. All Rights Reserved.</div>
