@@ -395,10 +395,7 @@
 (function(){
   const BASE = 10000;
   const days = Math.floor((new Date() - new Date('2025-01-01'))/864e5);
-  let count = parseInt(localStorage.getItem('jm_vc2') || 0);
-  if(!count) count = BASE + days * 8;
-  count++;
-  localStorage.setItem('jm_vc2', count);
+  let count = BASE + days * 8;
   const el = document.getElementById('vc-number2');
   const start = count - 60;
   let cur = start;
