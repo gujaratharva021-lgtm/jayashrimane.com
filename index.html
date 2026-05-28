@@ -399,12 +399,13 @@
 
 <script>
 (function(){
-  const BASE = 10000;
-  const days = Math.floor((new Date() - new Date('2025-01-01'))/864e5);
-  let count = BASE + days * 8;
   const el = document.getElementById('vc-number2');
+  const BASE = 10000;
+  let count = parseInt(localStorage.getItem('jm_visit_count') || BASE);
+  count++;
+  localStorage.setItem('jm_visit_count', count);
   const start = count - 60;
-  let cur = start;
+  let cur = start < BASE ? BASE : start;
   const t = setInterval(() => {
     cur += 2;
     el.textContent = cur.toLocaleString('en-IN');
