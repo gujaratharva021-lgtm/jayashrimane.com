@@ -69,6 +69,8 @@
     .services-header { text-align: center; margin-bottom: 56px; }
     .services-header .section-label { justify-content: center; }
     .services-header .section-label::before { display: none; }
+    .services-header .section-label { color: #1a1a1a; }
+    .services-header .section-title { color: #1a1a1a; }
     .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .service-item { background: var(--bg2); padding: 36px 30px; border: 1px solid var(--border); transition: box-shadow 0.3s, transform 0.3s; position: relative; overflow: hidden; }
     .service-item::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background: var(--gold); transition: width 0.4s ease; }
@@ -286,7 +288,7 @@
   <div class="about-text">
     <p class="section-label">About</p>
     <h2 class="section-title">Your Trusted Legal Partner</h2>
-    <p>Advocate Jayashri Mane is a seasoned legal professional with years of dedicated practice before courts and tribunals across Maharashtra. Known for her meticulous, client-first approach, she has successfully represented individuals, families, and businesses in complex legal matters.</p>
+    <p>Advocate Jayashri Mane is a seasoned legal professional with years of dedicated practice before courts and tribunals across Maharashtra. Known for her meticulous, client-first approach, she has successfully represented individuals, trust, families, and businesses in complex legal matters.</p>
     <p>Her practice encompasses a broad range of legal disciplines, ensuring comprehensive counsel for every client who walks through her door.</p>
     <div class="about-stats">
       <div class="stat-card"><div class="stat-num">8+</div><div class="stat-label">Years Experience</div></div>
@@ -305,7 +307,9 @@
 
 <div class="gold-line"></div>
 
-<section id="services">
+<section id="services" style="position:relative;overflow:hidden;">
+<div style="position:absolute;inset:0;background-image:url('law-bg.webp');background-size:cover;background-position:center;opacity:0.35;z-index:0;pointer-events:none;"></div>
+<div style="position:relative;z-index:1;">
   <div class="services-header">
     <p class="section-label">Practice Areas</p>
     <h2 class="section-title">Legal Services</h2>
@@ -314,12 +318,14 @@
     <div class="service-item"><div class="service-icon">🌾</div><div class="service-name">Land Litigation</div><p class="service-desc">Expert handling of land disputes, ownership conflicts, encroachment matters and title verification before courts at all levels.</p></div>
     <div class="service-item"><div class="service-icon">🏗️</div><div class="service-name">Land Acquisition</div><p class="service-desc">Comprehensive legal assistance in land acquisition matters, compensation claims and rehabilitation cases before Revenue Authorities and courts.</p></div>
     <div class="service-item"><div class="service-icon">⚖️</div><div class="service-name">Civil Law</div><p class="service-desc">Property disputes, contracts, injunctions, and civil litigation before courts at all levels.</p></div>
+    <div class="service-item"><div class="service-icon">🏦</div><div class="service-name">Trust Law</div><p class="service-desc">Formation, registration and administration of public and private trusts, trust disputes, and trustee advisory matters.</p></div>
     <div class="service-item"><div class="service-icon">🏛️</div><div class="service-name">Criminal Law</div><p class="service-desc">Defence in criminal matters, bail applications, anticipatory bail, and appeals.</p></div>
     <div class="service-item"><div class="service-icon">👨‍👩‍👧</div><div class="service-name">Family Law</div><p class="service-desc">Matrimonial disputes, divorce, child custody, maintenance, and adoption proceedings.</p></div>
     <div class="service-item"><div class="service-icon">📜</div><div class="service-name">Constitutional Law</div><p class="service-desc">Writ petitions, fundamental rights enforcement, and public interest litigation.</p></div>
     <div class="service-item"><div class="service-icon">🏢</div><div class="service-name">Commercial Law</div><p class="service-desc">Business agreements, commercial disputes, corporate advisory, and regulatory compliance.</p></div>
     <div class="service-item"><div class="service-icon">🤝</div><div class="service-name">Arbitration &amp; Mediation</div><p class="service-desc">Alternative dispute resolution for faster, confidential, and cost-effective outcomes.</p></div>
   </div>
+</div>
 </section>
 
 <div class="gold-line"></div>
@@ -418,7 +424,7 @@
     <a href="#services">Services</a>
     <a href="#contact">Contact</a>
   </div>
-  
+
   </div>
 </footer>
 </body>
