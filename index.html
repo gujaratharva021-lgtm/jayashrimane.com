@@ -400,17 +400,14 @@
 <script>
 (function(){
   const el = document.getElementById('vc-number2');
-  const BASE = 10000;
-  let count = parseInt(localStorage.getItem('jm_visit_count') || BASE);
-  count++;
-  localStorage.setItem('jm_visit_count', count);
-  const start = count - 60;
-  let cur = start < BASE ? BASE : start;
-  const t = setInterval(() => {
-    cur += 2;
-    el.textContent = cur.toLocaleString('en-IN');
-    if(cur >= count){ el.textContent = count.toLocaleString('en-IN'); clearInterval(t); }
-  }, 16);
+  fetch('https://api.countapi.xyz/hit/jayashrimane/visitors')
+    .then(res => res.json())
+    .then(data => {
+      el.textContent = data.value.toLocaleString('en-IN');
+    })
+    .catch(() => {
+      el.textContent = '10,000+';
+    });
 })();
 </script>
 
