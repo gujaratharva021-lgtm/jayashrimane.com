@@ -403,7 +403,7 @@
   fetch('https://visitor-counter.beellzking.workers.dev/')
     .then(res => res.json())
     .then(data => {
-      el.textContent = data.value.toLocaleString('en-IN');
+      el.textContent = data.count.toLocaleString('en-IN');
     })
     .catch(() => {
       el.textContent = '10,000+';
